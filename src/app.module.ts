@@ -3,9 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
+import { BalancerModule } from './balancer/balancer.module';
+import { WorkerModule } from './worker/worker.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule],
+  imports: [ConfigModule.forRoot(), DatabaseModule, BalancerModule, WorkerModule],
   controllers: [AppController],
   providers: [AppService],
 })
